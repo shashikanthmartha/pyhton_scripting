@@ -1,3 +1,0 @@
-variable "source_bucket" {
-  
-}
