@@ -27,3 +27,13 @@ variable "source_code_path" {
   default     = "lambda_function.zip"
   
 }
+variable "source_bucket" {
+  description = "The name of the source S3 bucket"
+  type        = string
+  
+}
+variable "destination_bucket" {
+  description = "The name of the destination S3 bucket"
+  type        = string
+  
+}
