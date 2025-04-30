@@ -18,4 +18,9 @@ terraform {
       version = ">= 2.2.0"
     }
   }
+    backend "s3" {
+    bucket = "shashikanth-s3"
+    key    = "shashi/terraform.tfstate"
+    region = "us-east-1"
+  }
 }
