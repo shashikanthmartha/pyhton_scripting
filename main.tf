@@ -40,3 +40,4 @@ module "S3_event" {
   lambda_function_arn = module.lambda_function.lambda_function_arn
   depends_on = [module.lambda_permission]
 }
+
