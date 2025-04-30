@@ -23,8 +23,20 @@ module "lambda_function" {
   runtime = var.runtime
   lambda_role_arn = module.lambda_role_policy.lambda_role_arn
   lambda_handler = var.lambda_handler
-  source_code_path = var.source_code_path
+  source_code_path = local.source_code_path
   source_bucket = module.source_bucket.source_bucket_name
   destination_bucket = module.destination_bucket.destination_bucket_name
 
+}
+module "lambda_permission" {
+  source = "./modules/lamdba_permision"
+  source_bucket_arn = module.source_bucket.source_bucket_arn
+  lambda_function_name = module.lambda_function.lambda_function_name
+  
+}
+module "S3_event" {
+  source = "./modules/S3_event"
+  source_bucket_name = module.source_bucket.source_bucket_name
+  lambda_function_arn = module.lambda_function.lambda_function_arn
+  depends_on = [module.lambda_permission]
 }
