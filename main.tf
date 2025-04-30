@@ -23,5 +23,8 @@ module "lambda_function" {
   runtime = var.runtime
   lambda_role_arn = module.lambda_role_policy.lambda_role_arn
   lambda_handler = var.lambda_handler
-  source_code_path = local.source_code_path
+  source_code_path = var.source_code_path
+  source_bucket = module.source_bucket.source_bucket_name
+  destination_bucket = module.destination_bucket.destination_bucket_name
+
 }

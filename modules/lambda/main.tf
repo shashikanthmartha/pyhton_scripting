@@ -5,4 +5,11 @@ resource "aws_lambda_function" "image_processor" {
   handler          = var.lambda_handler
   runtime          = var.runtime
   source_code_hash = filebase64sha256(var.source_code_path)
+    # Pass environment variables
+  environment {
+    variables = {
+      SOURCE_BUCKET      = var.source_bucket
+      DESTINATION_BUCKET = var.destination_bucket
+    }
+  }
 }
