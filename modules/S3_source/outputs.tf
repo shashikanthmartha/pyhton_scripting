@@ -1,6 +1,6 @@
-output "s3_bucket_name" {
+output "source_bucket_name" {
   value = aws_s3_bucket.source.bucket
 }
-output "s3_bucket_arn" {
+output "source_bucket_arn" {
   value = aws_s3_bucket.source.arn 
 }
