@@ -15,7 +15,7 @@ module "lambda_role_policy" {
   source_bucket_arn = module.source_bucket.source_bucket_arn
 }
 locals {
-  source_code_path = "C:\\Users\\SHASHIKANTH MARTHA\\OneDrive\\Documents\\python_scripts\\pyhton_scripting\\lambda\\image_processor.zip"
+  source_code_path = "./lambda/image_processor.zip"
 }
 module "lambda_function" {
   source = "./modules/lambda"
