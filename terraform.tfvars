@@ -1,0 +1,8 @@
+source_bucket="sorce-bucket-shashikanth"
+distination_bucket = "destination-bucket-shashikanth"
+lambda_role_name    ="lambda_role"
+lambda_policy ="lambda_policy"
+lambda_function_name = "lambda_function"
+runtime = "python3.9"
+lambda_handler = "image_processor.lambda_handler"
+# source_code_path = "${path.module}/lambda/lambda_function.zip"
